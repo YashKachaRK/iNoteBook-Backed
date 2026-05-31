@@ -1,19 +1,12 @@
-// use mongo 
-// make connection 
-
-const mongoose = require('mongoose')
-const mongoURI = "mongodb://localhost:27017/iNoteBook"
+const mongoose = require('mongoose');
 
 const connectToMongo = async () => {
   try {
-    await mongoose.connect(mongoURI)
-    console.log("Connected To mongo success");
-
-
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("Connected To MongoDB Atlas");
   } catch (error) {
-    console.log(error)
+    console.error(error);
   }
-
-}
+};
 
 module.exports = connectToMongo;
