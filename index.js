@@ -16,7 +16,9 @@ app.use(express.json());
 
 app.use('/api/auth', require('./routes/auth'))
 app.use('/api/note', require('./routes/note'))
-
+app.get('/', (req, res) => {
+  res.send('Backend is running');
+});
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:5000`);
