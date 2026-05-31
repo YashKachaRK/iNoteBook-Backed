@@ -9,8 +9,8 @@ connectToMongo()
 const app = express();
 const port = process.env.PORT || 5000;
 app.use(cors({
-  origin: 'https://your-frontend-project.vercel.app',
-  optionsSuccessStatus: 200 // later you can replace with frontend URL
+  origin: 'https://i-note-book-fronted.vercel.app',
+  credentials: true// later you can replace with frontend URL
 }));
 app.use(express.json());
 
